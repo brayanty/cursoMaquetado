@@ -23,8 +23,101 @@ body{
     min-width: 600px;
     max-height: 800px;
     position: relative;
-}   
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: #fff;
+}
+
+.hero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%),url('/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg');
+    background-size: cover;
+    clip-path: polygon(50% 0%, 81% 0, 100% 0, 100% 80%, 50% 100%, 50% 100%, 0 80%, 0 44%, 0 0);
+    z-index: -1;
+
+}
 
 .nav{
     --padding-container: 0;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__title{
+    font-weight: 300;
+}
+
+.nav__items{
+    list-style: none;
+}
+.nav__link{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2rem;
+}
+.nav__links{
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav__link{
+    margin-left: auto;
+}
+
+.nav__menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.nav__img{
+    display: block;
+    width: 30px;
+}
+
+.nav__close{
+    display: var(--show,none);
+}
+
+/*hero container*/
+
+.hero__container{
+    max-width: 800px;
+    display: grid;
+    --padding-container:0;
+    grid-auto-rows: max-content;
+    gap: 1em;
+    align-content: center;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.hero__title{
+    font-size: 3rem;
+}
+
+.hero__paragraph{
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.cta{
+    display: inline-block;
+    background-color: #2091f9;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding:13px 30px;
+    border-radius: 30px;
 }
