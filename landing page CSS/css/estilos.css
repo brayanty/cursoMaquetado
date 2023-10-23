@@ -1,123 +1,419 @@
+/* Importación de fuentes desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap');
- 
-:root{
+
+/* Variables CSS personalizadas definidas en el :root */
+:root {
     --padding-container: 100px 0;
+    /* Espaciado para el contenedor */
     --color-title: #001A47;
+    /* Color de título personalizado */
 }
 
-body{
+/* Estilos generales para el cuerpo de la página */
+body {
     font-family: 'Poppins', sans-serif;
+    /* Fuente principal */
 }
 
-.container{
+/* Estilos para el contenedor principal */
+.container {
     width: 90%;
+    /* Ancho del contenedor del 90% */
     max-width: 1200px;
+    /* Ancho máximo de 1200px */
     margin: 0 auto;
+    /* Centrar el contenedor horizontalmente */
     overflow: hidden;
+    /* Ocultar desbordamiento */
     padding: var(--padding-container);
+    /* Aplicar el espaciado personalizado */
 }
 
-.hero{
+/* Estilos para el área del héroe */
+.hero {
     width: 100%;
+    /* Ancho del 100% */
     height: 100vh;
+    /* Altura de la ventana gráfica */
     min-width: 600px;
+    /* Ancho mínimo de 600px */
     max-height: 800px;
+    /* Altura máxima de 800px */
     position: relative;
+    /* Posición relativa */
     display: grid;
+    /* Elemento de tipo grid */
     grid-template-rows: 100px 1fr;
+    /* Rejilla con dos filas */
     color: #fff;
+    /* Color de texto blanco */
 }
 
-.hero::before{
+/* Pseudo-elemento ::before para el área del héroe con una imagen de fondo */
+.hero::before {
     content: '';
+    /* Contenido del pseudo-elemento */
     position: absolute;
+    /* Posición absoluta */
     top: 0;
+    /* Desde la parte superior */
     left: 0;
+    /* Desde la izquierda */
     width: 100%;
+    /* Ancho del 100% */
     height: 100%;
-    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%),url('/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg');
+    /* Altura del 100% */
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg');
+    /* Imagen de fondo con degradado y URL */
     background-size: cover;
+    /* Tamaño de fondo: cubrir */
     clip-path: polygon(50% 0%, 81% 0, 100% 0, 100% 80%, 50% 100%, 50% 100%, 0 80%, 0 44%, 0 0);
+    /* Forma recortada */
     z-index: -1;
-
+    /* Índice z para colocar detrás del contenido */
 }
 
-.nav{
+/* Estilos para la barra de navegación */
+.nav {
     --padding-container: 0;
+    /* Espaciado para el contenedor de navegación */
     display: flex;
+    /* Elemento de tipo flexbox */
     height: 100%;
+    /* Altura del 100% */
     flex-direction: row;
+    /* Dirección de fila */
     align-items: center;
+    /* Centrar verticalmente */
     justify-content: space-between;
+    /* Espacio entre elementos */
 }
 
-.nav__title{
+/* Estilos para el título en la barra de navegación */
+.nav__title {
     font-weight: 300;
+    /* Peso de fuente 300 */
 }
 
-.nav__items{
+/* Estilos para los elementos de navegación en la barra */
+.nav__items {
     list-style: none;
+    /* Eliminar viñetas de la lista */
 }
-.nav__link{
+
+/* Estilos para los enlaces de navegación */
+.nav__link {
     margin-left: auto;
+    /* Margen izquierdo automático (alinear a la derecha) */
     padding: 0;
+    /* Relleno cero */
     display: grid;
+    /* Elemento de tipo grid */
     grid-auto-flow: column;
+    /* Flujo automático de columna */
     grid-auto-columns: max-content;
+    /* Ancho automático máximo */
     gap: 2rem;
+    /* Espacio entre columnas */
 }
-.nav__links{
+
+/* Estilos para los enlaces de navegación */
+.nav__links {
     color: #fff;
+    /* Color de texto blanco */
     text-decoration: none;
+    /* Sin decoración de texto */
 }
 
-.nav__link{
-    margin-left: auto;
+/* Estilos para el botón de cierre del menú de navegación */
+.nav__close {
+    display: var(--show, none);
+    /* Mostrar si la variable --show está definida como "block" */
 }
 
-.nav__menu{
-    margin-left: auto;
-    cursor: pointer;
-    display: none;
-}
-
-.nav__img{
-    display: block;
-    width: 30px;
-}
-
-.nav__close{
-    display: var(--show,none);
-}
-
-/*hero container*/
-
-.hero__container{
+/* Estilos para el contenedor del héroe */
+.hero__container {
     max-width: 800px;
+    /* Ancho máximo de 800px */
     display: grid;
-    --padding-container:0;
+    /* Elemento de tipo grid */
+    --padding-container: 0;
+    /* Espaciado para el contenedor */
     grid-auto-rows: max-content;
+    /* Altura automática máxima de las filas */
     gap: 1em;
+    /* Espacio entre elementos */
     align-content: center;
+    /* Centrar verticalmente */
     margin-bottom: 100px;
+    /* Margen inferior de 100px */
+    text-align: center;
+    /* Alineación de texto en el centro */
+}
+
+/* Estilos para el título en el contenedor del héroe */
+.hero__title {
+    font-size: 3rem;
+    /* Tamaño de fuente de 3 rem */
+}
+
+/* Estilos para el párrafo en el contenedor del héroe */
+.hero__paragraph {
+    margin-bottom: 20px;
+    /* Margen inferior de 20px */
+    font-size: 1.3em;
+    /* Tamaño de fuente de 1.3 em */
+}
+
+/* Estilos para el botón de llamado a la acción (CTA) */
+.cta {
+    display: inline-block;
+    /* Elemento en línea */
+    background-color: #2091f9;
+    /* Color de fondo azul */
+    justify-self: center;
+    /* Alineación del contenido al centro */
+    color: #fff;
+    /* Color de texto blanco */
+    text-decoration: none;
+    /* Sin decoración de texto */
+    padding: 13px 30px;
+    /* Relleno */
+    border-radius: 30px;
+    /* Borde redondeado */
+}
+
+/* Estilos para la sección "About" */
+.about {
+    text-align: center;
+    /* Alineación de texto en el centro */
+}
+
+/* Estilos para el subtítulo en la sección "About" */
+.subtitle {
+    color: var(--color-title);
+    /* Color del título personalizado */
+    font-size: 2rem;
+    /* Tamaño de fuente de 2 rem */
+    margin-bottom: 25px;
+    /* Margen inferior de 25px */
+}
+
+/* Estilos para el párrafo en la sección "About" */
+.about__paragraph {
+    line-height: 1.7;
+    /* Altura de línea de 1.7 */
+}
+
+/* Estilos para el contenido principal en la sección "About" */
+.about__main {
+    padding-top: 70px;
+    /* Relleno superior de 70px */
+    display: grid;
+    /* Elemento de tipo grid */
+    width: 90%;
+    /* Ancho del 90% */
+    margin: 0 auto;
+    /* Centrar horizontalmente */
+    gap: 1em;
+    /* Espacio entre elementos */
+    overflow: hidden;
+    /* Ocultar desbordamiento */
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    /* Rejilla de columnas adaptables */
+}
+
+/* Estilos para la sección de iconos en "About" */
+.about__icons {
+    display: grid;
+    /* Elemento de tipo grid */
+    gap: 1em;
+    /* Espacio entre elementos */
+    justify-items: center;
+    /* Centrar elementos horizontalmente */
+    width: 260px;
+    /* Ancho de 260px */
+    overflow: hidden;
+    /* Ocultar desbordamiento */
+    margin: 0 auto;
+    /* Centrar horizontalmente */
+}
+
+/* Estilos para un icono en "About" */
+.about__icon {
+    width: 40px;
+    /* Ancho de 40px */
+}
+
+/*Knowledge*/
+
+.knowledge {
+    background-color: #e5e5f7;
+    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    overflow: hidden;
+}
+
+.knowledge__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+.knowledge__picture {
+    max-width: 500px;
+}
+
+.knowledge__img {
+    width: 100%;
+    display: block;
+}
+
+.knowledge__paragraph {
+    line-break: 1.7;
+    margin-bottom: .5rem;
+}
+
+/* seccion Price*/
+
+.price {
     text-align: center;
 }
 
-.hero__title{
-    font-size: 3rem;
+.price__table {
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.hero__paragraph{
-    margin-bottom: 20px;
-    font-size: 1.3em;
+.price__element {
+    width: 260px;
+    background-color: #e5e5f7;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-price: #1D293f;
+    --bg-cta: #fff;
+    --color-cta: #5454d4;
+    --color-items: #696871;
 }
 
-.cta{
-    display: inline-block;
-    background-color: #2091f9;
-    justify-self: center;
-    color: #fff;
+.price__element--best {
+    width: 370px;
+    padding: 60px 40px;
+    background-color: #FF7143;
+    --color-plan: rgb(255 255 255 / 75%);
+    --color-price: #fff;
+    --bg-cta: #9F3919;
+    --color-cta: #FFF;
+    --color-items: #fff;
+}
+
+.price__name {
+    color: var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.price__price {
+    font-size: 2.5rem;
+    color: var(--color-price);
+}
+
+.price__items {
+    margin-top: 1em;
+    display: grid;
+    gap: 1em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-items);
+}
+
+.price__cta {
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
     text-decoration: none;
-    padding:13px 30px;
-    border-radius: 30px;
+    color: var(--color-title);
+    background-color: var(--bg-cta);
+    color: var(--color-cta);
+    font-weight: 600;
+    box-shadow: 0 0 1px rgba(0, 0,0,.5);
+}
+
+.price__element--best {
+    padding: 60px 40px;
+    background-color: #df5809;
+    --color-plan: rgb(255 255 255 / 75%);
+    --color-price: #fff;
+    --bg-cta: #9F3919;
+    --color-cta: #FFF;
+    --color-items: #fff;
+}
+
+.testimony {
+    background-color: #e5e5f7;
+}
+
+.testimony__container {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+}
+
+.testimony__body {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.testimony__body--show {
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+
+.testimony__text {
+    max-width: 700px;
+}
+
+.testimony__arrow {
+    width: 90%;
+    cursor: pointer;
+}
+
+.testimony__course {
+    background-color: royalblue;
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+}
+
+.testimony__review {
+}
+
+.testimony__picture {
+}
+
+.testimony__img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
 }
